@@ -6,7 +6,7 @@ import pytz
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 SHEETY_BEARER_TOKEN = os.environ.get('SHEETY_BEARER_TOKEN')
-GEMINI_ENDPOINT = (f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?"
+GEMINI_ENDPOINT = (f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?"
                    f"key={GEMINI_API_KEY}")
 SHEETY_ENDPOINT = "https://api.sheety.co/07c36683a7b1d8e6c41890211ffa1d84/personalExpenseTracker/apiInput"
 gemini_headers = {'Content-Type': 'application/json'}

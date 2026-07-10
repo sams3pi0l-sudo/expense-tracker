@@ -53,6 +53,7 @@ if st.button("Log Expense"):
             try:
                 # 1. Ask Gemini to extract the data
                 gemini_response = requests.post(url=GEMINI_ENDPOINT, json=gemini_payload, headers=gemini_headers)
+                gemini_response.raise_for_status()
                 data = gemini_response.json()
                 
                 raw_string_from_gemini = data['candidates'][0]['content']['parts'][0]['text']

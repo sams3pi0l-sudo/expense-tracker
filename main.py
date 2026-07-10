@@ -63,7 +63,7 @@ if st.button("Log Expense"):
 
                 # 2. Format data for Sheety
                 row_data = {
-                    'juneJuly': {
+                    'apiInput': {
                         'date': gemini_response_json[0]["date"],
                         'description': gemini_response_json[0]["description"].title(),
                         'category': gemini_response_json[0]["category"].title(),

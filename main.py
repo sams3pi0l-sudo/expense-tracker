@@ -3,6 +3,7 @@ import requests
 import json
 import streamlit as st
 from datetime import datetime
+import pytz
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 SHEETY_BEARER_TOKEN = os.environ.get('SHEETY_BEARER_TOKEN')
@@ -24,7 +25,8 @@ if st.button("Log Expense"):
     
     if user_input: # Ensure the input isn't empty
         with st.spinner("Analyzing and logging your expense..."):
-            date = datetime.now()
+            tehran = pytz.timezone("Asia/Tehran")
+            date = datetime.now(tehran)
             today_date = date.strftime("%m/%d/%Y")
 
             prompt_text = f"""
